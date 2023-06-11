@@ -1,5 +1,7 @@
 const { REST, Routes } = require('discord.js');
-const { clientId, guildId, token } = require('./config.json');
+const clientId = process.env['clientid'];
+const guildId = process.env['guildId'];
+const token = process.env['token'];
 const fs = require('node:fs');
 
 const commands = [];
@@ -17,7 +19,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 		console.log(`${commands.length} 個のアプリケーションコマンドを登録します。`);
 
 		const data = await rest.put(
-			Routes.applicationGuildCommands(clientId, guildId),
+			Routes.applicationGuildCommands(clientId),
 			{ body: commands },
 		);
 
