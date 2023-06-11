@@ -44,7 +44,7 @@ halfnum = num / 2;
     return '1以上が送信されなかったため終了します。'
   }
    if (num == 1 || num == 2){
-     return num+' is Prime Number.';
+     return num+'は素数';
    }
   for (i = 2;i <= halfnum;i++){
     cachei = i;
@@ -62,7 +62,7 @@ halfnum = num / 2;
     }
   }
   if(isPrime == 0){
-    result = num + ' is Prime Number.';
+    result = num + 'は素数';
     return result;
   }
   else if (isPrime == 1){
