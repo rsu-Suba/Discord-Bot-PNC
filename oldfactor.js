@@ -1,8 +1,10 @@
+//6-10-2023
+
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('factor')
+		.setName('f')
 		.setDescription('素因数分解'),
 	async execute(interaction) {
 		const filter = response => {
