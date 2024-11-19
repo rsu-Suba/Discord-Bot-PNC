@@ -1,7 +1,7 @@
 const { REST, Routes } = require('discord.js');
-const clientId = Deno.env.get('clientId');
-const guildId = Deno.env.get('guildId');
-const token = Deno.env.get('token');
+const clientId = process.env['clientId'];
+const guildId = process.env['guildId'];
+const token = process.env['token']
 const fs = require('node:fs');
 
 const commands = [];

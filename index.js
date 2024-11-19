@@ -1,7 +1,8 @@
+
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
-const token = Deno.env.get('token');
+const token = process.env['token'];
 
 
 const client = new Client({intents: [GatewayIntentBits.Guilds,GatewayIntentBits.GuildMessages,GatewayIntentBits.MessageContent]});
@@ -43,8 +44,4 @@ client.on('interactionCreate', async interaction => {
     console.error(error);
     await interaction.reply({ content: 'Error', ephemeral: true });
   }
-});
-
-Deno.cron("Continuous Request", "*/2 * * * *", () => {
-  console.log("running...");
 });
